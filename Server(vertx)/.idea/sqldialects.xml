@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/49bde329-38f8-4f5a-94d9-976ae59a42bd/console.sql" dialect="MariaDB" />
+    <file url="file://$PROJECT_DIR$/src/main/java/de/thm/mni/ip/photoApp/MainVerticle.java" dialect="GenericSQL" />
+  </component>
+</project>

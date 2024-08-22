@@ -1,0 +1,145 @@
+### Login
+POST http://localhost:8888/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "password"
+}
+
+
+### Logout
+POST http://localhost:8888/logout
+
+### Create User
+POST http://localhost:8888/users
+Content-Type: application/json
+
+{
+  "username": "newUser1",
+  "password": "newPass1"
+}
+
+###
+
+### Get All Users
+GET http://localhost:8888/users
+
+###
+
+### Search User
+GET http://localhost:8888/users/3
+
+###
+
+### Edit User
+PUT http://localhost:8888/users/3
+Content-Type: application/json
+
+{
+  "username": "updatedUser",
+  "password": "updatedPass"
+}
+
+###
+
+### Delete User
+DELETE http://localhost:8888/users/3
+
+### Upload Photo
+POST http://localhost:8888/1/photos
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="title"
+
+Sample Photo
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="capture_date"
+
+2024-08-06
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="tags"
+
+tag1,tag2
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="test.png"
+Content-Type: image/png
+
+<~/home/abdessamad/Downloads/test.png >
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+### Get All Photos
+GET http://localhost:8888/1/photos
+Content-Type: application/json
+
+### Search Photo by Title and Tags
+POST http://localhost:8888/1/photos/{photoID}
+Content-Type: application/json
+
+{
+  "searchTerm": "Sample"
+}
+
+### Edit Photo
+PUT http://localhost:8888/1/photos/1
+Content-Type: application/json
+
+{
+  "title": "Updated Title",
+  "capture_date": "2024-08-07",
+  "tags": "updatedTag1,updatedTag2"
+}
+
+### Delete Photo
+DELETE http://localhost:8888/1/photos/1
+Content-Type: application/json
+
+
+
+### Create Album
+POST http://localhost:8888/1/albums
+Content-Type: application/json
+
+{
+  "title": "testTitel",
+  "tags": "tag1 tag2"
+}
+
+
+### Get All Albums
+GET http://localhost:8888/1/albums
+Content-Type: application/json
+
+
+### Search Album by Title or Tags
+GET http://localhost:8888/1/albums/{albumID}
+Content-Type: application/json
+
+
+### Edit Album
+PUT http://localhost:8888/1/albums/{albumID}
+Content-Type: application/json
+
+{
+  "title": "newTitle",
+  "tags": "newTag1 newTag2"
+}
+
+
+### Delete Album
+DELETE http://localhost:8888/1/albums/{albumID}
+Content-Type: application/json
+
+
+### Add Photo to Album
+POST http://localhost:8888/1/albums/{albumID}/{photoID}
+Content-Type: application/json
+
+
+### Delete Photo from Album
+DELETE http://localhost:8888/1/albums/{albumID}/{photoID}
+Content-Type: application/json
+
+

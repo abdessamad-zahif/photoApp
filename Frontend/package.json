@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/jquery": "^3.5.30",
+    "@types/node": "^20.12.7"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

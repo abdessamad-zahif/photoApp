@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album Management</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f8f9fa;
+    }
+    .management-container {
+      width: 100%;
+      max-width: 800px;
+      padding: 15px;
+      margin: auto;
+    }
+    .album-item, .photo-item {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<div class="management-container card">
+  <div class="card-body">
+    <h3 class="card-title text-center">Album Management</h3>
+
+    <nav class="mb-4">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" id="userManagementLink" href="#">User Management</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="photoManagementLink" href="#">Photo Management</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" id="albumManagementLink" href="#">Album Management</a>
+        </li>
+        <li class="nav-item ml-auto">
+          <button id="logoutButton" class="btn btn-danger">Logout</button>
+        </li>
+      </ul>
+    </nav>
+
+    <form id="createAlbumForm" class="mb-4">
+      <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags:</label>
+        <input type="text" class="form-control" id="tags" name="tags">
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Create Album</button>
+    </form>
+
+    <div id="result" class="mb-4"></div>
+
+    <button id="getAllAlbumsButton" class="btn btn-secondary btn-block mb-3">Get All Albums</button>
+
+    <form id="searchAlbumForm" class="mb-4">
+      <div class="form-group">
+        <label for="searchTerm">Search Album:</label>
+        <input type="text" class="form-control" id="searchTerm" name="searchTerm" required>
+      </div>
+      <button type="submit" class="btn btn-info btn-block">Search Album</button>
+    </form>
+
+    <div id="albumsList" class="mt-3"></div>
+
+    <!-- Section to manage photos within an album -->
+    <div id="albumPhotosSection" class="mt-5" style="display: none;">
+      <h4>Photos in Album</h4>
+
+      <form id="addPhotoForm" class="mb-4" data-album-id="">
+        <div class="form-group">
+          <label for="photoID">Select a Photo to Add:</label>
+          <input type="text" class="form-control" id="photoID" name="photoID" readonly>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Add Photo to Album</button>
+      </form>
+
+      <div id="photosList" class="mt-3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="albumsFetch.js"></script>
+</body>
+</html>
